@@ -1,0 +1,31 @@
+@import './base.css';
+
+#app{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+a{
+  text-decoration: underline;
+  color: hsl(138, 74%, 30%);
+}
+
+@media (hover: hover){
+  a:hover{
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px){
+  body{
+    margin-top: 3rem;
+  }
+
+  #app{
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+}

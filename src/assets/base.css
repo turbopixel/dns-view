@@ -1,0 +1,35 @@
+
+/* semantic color variables for this project */
+:root{
+  --color-background: rgb(101, 100, 124);
+  --color-background-pad: rgb(139, 126, 116);
+  --color-heading: rgb(227, 209, 161);
+  --color-text: rgb(199, 188, 161);
+  --color-label: rgb(241, 211, 179);
+  --section-gap: 160px;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+html{
+  background: var(--color-background);
+}
+
+body{
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  line-height: 1.6;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+  Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
