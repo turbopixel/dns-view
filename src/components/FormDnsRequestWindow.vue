@@ -23,7 +23,7 @@ export default {
             console.debug("FormDnsRequestWindow.17", json);
             setTimeout(() => {
               this.$data.result = json;
-            }, 300)
+            }, 220)
           })
     }
   }
@@ -33,7 +33,8 @@ export default {
 
   <header>
     <div class="greetings">
-      <h1>DNS.view</h1>
+      <h1>DNS.view</h1><br/>
+      <span>by <a href="https://hemk.es/" target="_blank" rel="author external" title="author of this project">@turbopixel</a></span>
     </div>
 
     <div class="formular">
@@ -91,16 +92,32 @@ header{
   }
 }
 
-
 .greetings{
   display: flex;
   place-items: center;
-
   font-weight: 800;
-  font-size: 1.5rem;
   text-decoration: none;
-  color: var(--color-heading);
   transition: 0.4s;
+  flex-direction: column;
+  font-size: 1.25rem;
+  color: var(--color-heading);
+  line-height: 2rem;
+}
+
+.greetings span{
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.greetings a{
+  font-size: 0.9rem;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: 220ms color;
+}
+
+.greetings a:hover{
+  color: var(--color-label);
 }
 
 @media (min-width: 1024px){
