@@ -41,14 +41,25 @@ export default {
       <div class="field">
         <label for="" class="label">Enter domain</label>
         <div class="control">
-          <input type="text" name="domain" id="domain" v-model="domain" required minlength="3" @keyup.enter="reqDns" class="input-text" placeholder="domain.tld">
+          <input
+              type="text"
+              name="domain"
+              id="domain"
+              v-model="domain"
+              required
+              minlength="3"
+              autocomplete="off"
+              autocapitalize="none"
+              @keyup.enter="reqDns"
+              class="input-text"
+              placeholder="domain.tld">
         </div>
       </div>
     </div>
   </header>
 
   <div id="resultbox" class="resultbox" v-if="result">
-    <table width="100%" v-for="row in result">
+    <table cellpadding="0" cellspacing="0" border="0" v-for="row in result">
       <tr v-if="row.type === 'A'">
         <td width="60">{{ row.type }}</td>
         <td>{{ row.ip }}</td>
@@ -168,13 +179,12 @@ header{
 }
 
 .resultbox{
-  display: block;
   width: 100%;
   background: var(--color-label);
   color: var(--color-background);
   border-radius: 0 0 7px 7px;
   padding: 1rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-family: monospace;
 }
 
