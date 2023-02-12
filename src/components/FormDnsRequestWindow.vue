@@ -59,34 +59,32 @@ export default {
   </header>
 
   <div id="resultbox" class="resultbox" v-if="result">
-    <table cellpadding="0" cellspacing="0" border="0" v-for="row in result">
-      <tr v-if="row.type === 'A'">
-        <td width="60">{{ row.type }}</td>
-        <td>{{ row.ip }}</td>
-      </tr>
-      <tr v-if="row.type === 'AAAA'">
-        <td width="60">{{ row.type }}</td>
-        <td>{{ row.ipv6 }}</td>
-      </tr>
-      <tr v-if="row.type === 'MX'">
-        <td width="60">{{ row.type }}</td>
-        <td>({{ row.pri }}) {{ row.target }}</td>
-      </tr>
-      <tr v-if="row.type === 'CNAME'">
-        <td width="60">{{ row.type }}</td>
-        <td>{{ row.target }}</td>
-      </tr>
-      <tr v-if="row.type === 'TXT'">
-        <td width="60">{{ row.type }}</td>
-        <td>
-          <div style="overflow: hidden">{{ row.txt }}</div>
-        </td>
-      </tr>
-      <tr v-if="row.type === 'NS'">
-        <td width="60">{{ row.type }}</td>
-        <td>{{ row.target }}</td>
-      </tr>
-    </table>
+    <div v-for="row in result">
+      <div class="result-box" v-if="row.type === 'A'">
+        <span class="result--type">{{ row.type }}</span>
+        <span class="result--entry">{{ row.ip }}</span>
+      </div>
+      <div class="result-box" v-if="row.type === 'AAAA'">
+        <span class="result--type">{{ row.type }}</span>
+        <span class="result--entry">{{ row.ipv6 }}</span>
+      </div>
+      <div class="result-box" v-if="row.type === 'MX'">
+        <span class="result--type">{{ row.type }}</span>
+        <span class="result--entry">({{ row.pri }}) {{ row.target }}</span>
+      </div>
+      <div class="result-box" v-if="row.type === 'CNAME'">
+        <span class="result--type">{{ row.type }}</span>
+        <span class="result--entry">{{ row.target }}</span>
+      </div>
+      <div class="result-box" v-if="row.type === 'TXT'">
+        <span class="result--type">{{ row.type }}</span>
+        <span class="result--entry">{{ row.txt }}</span>
+      </div>
+      <div class="result-box" v-if="row.type === 'NS'">
+        <span class="result--type">{{ row.type }}</span>
+        <span class="result--entry">{{ row.target }}</span>
+      </div>
+    </div>
   </div>
 
 </template>
@@ -179,13 +177,33 @@ header{
 }
 
 .resultbox{
+  margin: 2rem auto 0;
   width: 100%;
-  background: var(--color-label);
-  color: var(--color-background);
-  border-radius: 0 0 7px 7px;
-  padding: 1rem;
   font-size: 0.95rem;
   font-family: monospace;
+}
+
+.resultbox .result-box{
+  margin: 0 auto 1rem;
+  background: var(--color-label);
+  color: var(--color-background);
+  border-radius: 3px;
+  padding: 1rem;
+
+  display: grid;
+  grid-template-columns: 50px auto;
+}
+
+.resultbox .result-box .result--type{
+  font-weight: 800;
+}
+
+.resultbox .result-box .result--entry{
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-wrap: anywhere;
+  word-break: break-all;
 }
 
 </style>
