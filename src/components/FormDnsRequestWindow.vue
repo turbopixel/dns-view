@@ -108,7 +108,7 @@ header{
   text-decoration: none;
   transition: 0.4s;
   flex-direction: column;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   color: var(--color-heading);
   line-height: 2rem;
 }
@@ -119,7 +119,7 @@ header{
 }
 
 .greetings a{
-  font-size: 0.9rem;
+  font-size: 0.922rem;
   color: var(--color-text);
   text-decoration: none;
   transition: 220ms color;

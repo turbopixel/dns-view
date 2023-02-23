@@ -1,10 +1,10 @@
 /* semantic color variables for this project */
 :root{
-  --color-background: rgb(101, 100, 124);
+  --color-background: rgb(42, 42, 47);
   --color-background-pad: rgb(139, 126, 116);
-  --color-heading: rgb(218, 199, 149);
-  --color-text: rgb(199, 188, 161);
-  --color-label: rgb(241, 211, 179);
+  --color-heading: rgb(113, 170, 201);
+  --color-text: rgb(161, 176, 199);
+  --color-label: rgb(172, 192, 203);
   --section-gap: 160px;
 }
 
