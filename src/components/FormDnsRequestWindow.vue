@@ -46,6 +46,7 @@ export default {
               name="domain"
               id="domain"
               v-model="domain"
+              autofocus
               required
               minlength="3"
               autocomplete="off"
@@ -110,7 +111,7 @@ header{
   flex-direction: column;
   font-size: 1.35rem;
   color: var(--color-heading);
-  line-height: 2rem;
+  line-height: 1.85rem;
 }
 
 .greetings span{
