@@ -21,7 +21,13 @@ if (empty($parsed["host"])) {
 
 }
 
-$host = empty($parsed["host"]) ? $parsed["path"] : $parsed["host"];
-$dig  = dns_get_record($host, DNS_CNAME + DNS_A + DNS_MX + DNS_NS + DNS_TXT + DNS_AAAA);
+$host = trim(empty($parsed["host"]) ? $parsed["path"] : $parsed["host"]);
+
+if (empty($host) || strlen($host) < 3) {
+  echo json_encode(["err" => "missing hostname"]);
+  exit;
+}
+
+$dig = dns_get_record($host, DNS_CNAME + DNS_A + DNS_MX + DNS_NS + DNS_TXT + DNS_AAAA);
 
 echo json_encode($dig);
